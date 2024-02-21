@@ -3,7 +3,7 @@
 #include <cstdlib>
 
 std::string getword(){
-    std::vector<std::string> words = {"hangman"};
+    std::vector<std::string> words = {"hangman","quip","games","have","pain","distain","dictionary"};
     std::srand(time(0));
     size_t word_i = words.size();
     word_i = std::rand() % word_i;
@@ -36,7 +36,7 @@ int main(){
     std::vector<char> guesses = {};
     std::vector<char> wrong_guesses = {};
     std::string word = getword();
-    std::cout << word << "\n";
+    
     for(int i = 0; i < word.length(); i++){
         std::cout << "? ";
             guesses.emplace_back('?');
