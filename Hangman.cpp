@@ -54,7 +54,12 @@ int main(){
             bool check = false;
             char compare = word[i];
             
-
+            if((i == word.length() - 1 ) && (check == false)){
+                std::cout << "That letter is not in the word ";
+                strikes++;
+                wrong_guesses.emplace_back(player_guess[0]);
+            }
+            
             if(compare == player_guess[0]){
                 std::cout << "Well done, that letter is in the word\n";
                 std::vector<int> indexes = findIndexesOfLetter(word,player_guess[0]);
@@ -74,12 +79,9 @@ int main(){
             }
             
             
-            if((i == word.length() ) && (check == false)){
-                std::cout << "That letter is not in the word ";
-                strikes++;
-                wrong_guesses.emplace_back(player_guess[0]);
 
-            }
+
+            
             
 
 
