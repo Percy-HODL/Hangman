@@ -2,17 +2,18 @@
 #include <vector>
 #include <cstdlib>
 
+
 std::string getword(){
     std::vector<std::string> words = {"hangman","quip","games","have","pain","distain","dictionary"};
     std::srand(time(0));
-    size_t word_i = words.size();
+    std::size_t word_i = words.size();
     word_i = std::rand() % word_i;
     std::string word = words[word_i];
     return word;
 
 }
 void print_guesses(std::vector<char> guess){
-    for(size_t i = 0; i < guess.size(); ++i){
+    for(std::size_t i = 0; i < guess.size(); ++i){
         std::cout << guess[i] << " ";
     }
     std::cout << "\n";
@@ -54,7 +55,7 @@ int main(){
             bool check = false;
             char compare = word[i];
             
-            if((i == word.length() - 1 ) && (check == false)){
+            if((i == word.length()) && (check == false)){
                 std::cout << "That letter is not in the word ";
                 strikes++;
                 wrong_guesses.emplace_back(player_guess[0]);
